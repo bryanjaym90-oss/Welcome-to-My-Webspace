@@ -1,107 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>#MyFirstCode | Goodwall x GitHub</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 32px;
-      max-width: 460px;
-      width: 100%;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-    }
-    .badge {
-      display: inline-block;
-      background: rgba(46, 160, 67, 0.15);
-      color: #3fb950;
-      border: 1px solid rgba(46, 160, 67, 0.4);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 1.6rem;
-      color: #f0f6fc;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
-    p {
-      color: #8b949e;
-      line-height: 1.6;
-      font-size: 0.95rem;
-      margin-bottom: 24px;
-    }
-    .btn {
-      background-color: #238636;
-      color: #ffffff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.1s ease;
-    }
-    .btn:hover { background-color: #2ea043; }
-    .btn:active { transform: scale(0.98); }
-    .terminal-text {
-      font-family: monospace;
-      background: #0d1117;
-      padding: 12px;
-      border-radius: 6px;
-      border-left: 3px solid #58a6ff;
-      color: #58a6ff;
-      margin-top: 24px;
-      font-size: 0.85rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#MyFirstCode | Goodwall x GitHub</title>
+<style>
+  /* Import Google Material Icons for the 3-dot buffer animation */
+  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+  /* ============ RESET ============ */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ============ TOKENS ============
+     Every theme is one attribute swap on <body>. */
+  :root {
+    --radius: 12px;
+    --dur: .25s;
+  }
+
+  body[data-theme="light"] {
+    /* White BG, Black Text, Grey Accent */
+    --bg: #ffffff; --bg2: #f8f9fa; --border: #e9ecef;
+    --ink: #000000; --ink-strong: #000000; --ink-soft: #495057;
+    --accent: #808080; --accent-strong: #6c757d; --accent-press: #5c636a;
+    --accent-soft: rgba(128,128,128,0.15); --accent-border: rgba(128,128,128,0.4);
+    --term-ink: #000000; --term-bg: #e9ecef; --shadow: rgba(0,0,0,0.1);
+    --field: radial-gradient(700px 500px at 15% 10%, rgba(128,128,128,.10), transparent 60%),
+             radial-gradient(900px 700px at 85% 90%, rgba(108,117,125,.08), transparent 60%);
+  }
+
+  body[data-theme="dark"] {
+    /* Grey BG, White Text, Black Accent */
+    --bg: #343a40; --bg2: #495057; --border: #6c757d;
+    --ink: #ffffff; --ink-strong: #ffffff; --ink-soft: #dee2e6;
+    --accent: #000000; --accent-strong: #1a1a1a; --accent-press: #0d0d0d;
+    --accent-soft: rgba(0,0,0,0.25); --accent-border: rgba(0,0,0,0.5);
+    --term-ink: #ffffff; --term-bg: #212529; --shadow: rgba(0,0,0,0.4);
+    --field: radial-gradient(700px 500px at 15% 10%, rgba(0,0,0,.15), transparent 60%),
+             radial-gradient(900px 700px at 85% 90%, rgba(0,0,0,.10), transparent 60%);
+  }
+
+  body[data-theme="lover"] {
+    /* Dark Red BG, Light Red Text, Green Accent */
+    --bg: #380202; --bg2: #4a0404; --border: #801515;
+    --ink: #ffb3b3; --ink-strong: #ffcccc; --ink-soft: #ff8a8a;
+    --accent: #00b300; --accent-strong: #00cc00; --accent-press: #009900;
+    --accent-soft: rgba(0,179,0,.15); --accent-border: rgba(0,179,0,.4);
+    --term-ink: #ffb3b3; --term-bg: #240101; --shadow: rgba(0,0,0,.45);
+    --field: radial-gradient(700px 500px at 20% 0%, rgba(0,179,0,.14), transparent 60%),
+             radial-gradient(900px 700px at 90% 100%, rgba(0,153,0,.10), transparent 60%);
+  }
+
+  body[data-theme="blues"] {
+    /* Dark Blue BG, Light Blue Text, Orange Accent */
+    --bg: #02112e; --bg2: #051d4a; --border: #0a2d73;
+    --ink: #8ab4f8; --ink-strong: #c2d7fa; --ink-soft: #669df6;
+    --accent: #ff9900; --accent-strong: #ffaa33; --accent-press: #e68a00;
+    --accent-soft: rgba(255,153,0,.15); --accent-border: rgba(255,153,0,.4);
+    --term-ink: #8ab4f8; --term-bg: #010a1c; --shadow: rgba(0,0,0,.45);
+    --field: radial-gradient(700px 500px at 15% 5%, rgba(255,153,0,.14), transparent 60%),
+             radial-gradient(900px 700px at 90% 95%, rgba(230,138,0,.10), transparent 60%);
+  }
+
+  body[data-theme="choco"] {
+    /* Dark Brown BG, Orange Text, Tan Accent */
+    --bg: #2e170a; --bg2: #3d200e; --border: #633e24;
+    --ink: #ff9933; --ink-strong: #ffaa55; --ink-soft: #e68a2e;
+    --accent: #d2b48c; --accent-strong: #e1c699; --accent-press: #bda078;
+    --accent-soft: rgba(210,180,140,.15); --accent-border: rgba(210,180,140,.4);
+    --term-ink: #ff9933; --term-bg: #1f0f06; --shadow: rgba(0,0,0,.45);
+    --field: radial-gradient(700px 500px at 20% 0%, rgba(210,180,140,.14), transparent 60%),
+             radial-gradient(900px 700px at 90% 100%, rgba(189,160,120,.10), transparent 60%);
+  }
+
+  body[data-theme="nature"] {
+    /* Dark Green BG, Light Green Text, Red Accent */
+    --bg: #072107; --bg2: #0b300b; --border: #1a5c1a;
+    --ink: #99ff99; --ink-strong: #b3ffb3; --ink-soft: #80e680;
+    --accent: #ff3333; --accent-strong: #ff4d4d; --accent-press: #e62e2e;
+    --accent-soft: rgba(255,51,51,.15); --accent-border: rgba(255,51,51,.4);
+    --term-ink: #99ff99; --term-bg: #041404; --shadow: rgba(0,0,0,.45);
+    --field: radial-gradient(700px 500px at 15% 10%, rgba(255,51,51,.14), transparent 60%),
+             radial-gradient(900px 700px at 90% 95%, rgba(230,46,46,.10), transparent 60%);
+  }
+
+  body[data-theme="party"] {
+    /* Dark Indigo BG, Cyan Text, Yellow Accent */
+    --bg: #140026; --bg2: #1e003b; --border: #3c0080;
+    --ink: #00ffff; --ink-strong: #ccffff; --ink-soft: #00e6e6;
+    --accent: #ffff00; --accent-strong: #ffff33; --accent-press: #e6e600;
+    --accent-soft: rgba(255,255,0,.15); --accent-border: rgba(255,255,0,.4);
+    --term-ink: #00ffff; --term-bg: #0a0014; --shadow: rgba(0,0,0,.45);
+    --field: radial-gradient(700px 500px at 20% 5%, rgba(255,255,0,.16), transparent 60%),
+             radial-gradient(900px 700px at 88% 95%, rgba(230,230,0,.10), transparent 60%);
+  }
+
+  body[data-theme="royal"] {
+    /* Purple BG, Dark Purple Text, Pink Accent */
+    --bg: #630063; --bg2: #800080; --border: #a82fa8;
+    --ink: #2b002b; --ink-strong: #1a001a; --ink-soft: #4d004d;
+    --accent: #ff69b4; --accent-strong: #ff85c1; --accent-press: #e65ea2;
+    --accent-soft: rgba(255,105,180,.25); --accent-border: rgba(255,105,180,.5);
+    --term-ink: #1a001a; --term-bg: #d175d1; --shadow: rgba(0,0,0,.35);
+    --field: radial-gradient(700px 500px at 15% 0%, rgba(255,105,180,.20), transparent 60%),
+             radial-gradient(900px 700px at 90% 100%, rgba(230,94,162,.15), transparent 60%);
+  }
+
+  body[data-theme="sweet"] {
+    /* Pink BG, Dark Pink Text, Violet Accent */
+    --bg: #ffc0cb; --bg2: #ffb6c1; --border: #ff69b4;
+    --ink: #8b0050; --ink-strong: #610038; --ink-soft: #a81c68;
+    --accent: #8a2be2; --accent-strong: #9a32eb; --accent-press: #7c26cc;
+    --accent-soft: rgba(138,43,226,.15); --accent-border: rgba(138,43,226,.4);
+    --term-ink: #8b0050; --term-bg: #ffe4e1; --shadow: rgba(139,0,80,.15);
+    --field: radial-gradient(700px 500px at 15% 5%, rgba(138,43,226,.10), transparent 60%),
+             radial-gradient(900px 700px at 90% 95%, rgba(124,38,204,.07), transparent 60%);
+  }
+
+  body[data-theme="neutral"] {
+    /* Olive BG, Brown Text, White Accent */
+    --bg: #6e6e00; --bg2: #808000; --border: #a5a52a;
+    --ink: #4e2f1d; --ink-strong: #331f13; --ink-soft: #6b422a;
+    --accent: #ffffff; --accent-strong: #f0f0f0; --accent-press: #e0e0e0;
+    --accent-soft: rgba(255,255,255,.2); --accent-border: rgba(255,255,255,.5);
+    --term-ink: #331f13; --term-bg: #a3a329; --shadow: rgba(0,0,0,.3);
+    --field: radial-gradient(700px 500px at 20% 10%, rgba(255,255,255,.10), transparent 60%),
+             radial-gradient(900px 700px at 88% 92%, rgba(224,224,224,.08), transparent 60%);
+  }
+
+  /* ============ BASE ============ */
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    background-image: var(--field);
+    background-attachment: fixed;
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    padding: 24px 16px 40px;
+    transition: background-color var(--dur) ease, color var(--dur) ease;
+  }
+
+  /* ============ THEME RAIL ============ */
+  .theme-rail {
+    width: 100%;
+    max-width: 460px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  .theme-dot {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 3px solid var(--dot-border);
+    cursor: pointer;
+    padding: 0;
+    background: var(--swatch);
+    transition: transform .15s ease, border-color var(--dur) ease, box-shadow var(--dur) ease;
+    position: relative;
+  }
+  .theme-dot:hover { transform: translateY(-2px) scale(1.06); }
+  .theme-dot:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .theme-dot[aria-pressed="true"] {
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+
+  /* ============ CARD ============ */
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    max-width: 460px;
+    width: 100%;
+    box-shadow: 0 12px 32px var(--shadow);
+    transition: background-color var(--dur) ease, border-color var(--dur) ease, box-shadow var(--dur) ease;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    transition: color var(--dur) ease, background var(--dur) ease, border-color var(--dur) ease;
+  }
+  h1 {
+    font-size: 1.6rem;
+    color: var(--ink-strong);
+    margin-bottom: 12px;
+    line-height: 1.3;
+    transition: color var(--dur) ease;
+  }
+  p {
+    color: var(--ink-soft);
+    line-height: 1.6;
+    font-size: .95rem;
+    margin-bottom: 24px;
+    transition: color var(--dur) ease;
+  }
+
+  /* Button and Wrapper */
+  #btn-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    transition: justify-content 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+  }
+  .btn {
+    background-color: var(--accent-press);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--dur) ease, transform .1s ease, background-color var(--dur) ease;
+  }
+  .btn:hover { background-color: var(--accent-strong); }
+  .btn:active { transform: scale(.98); }
+  .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ============ TERMINAL ============ */
+  .terminal-text {
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    background: var(--term-bg);
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 3px solid var(--term-ink);
+    color: var(--term-ink);
+    margin-top: 24px;
+    font-size: .85rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: background var(--dur) ease, border-color var(--dur) ease, color var(--dur) ease;
+  }
+  .terminal-text::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      to bottom, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px,
+      transparent 1px, transparent 3px
+    );
+    pointer-events: none;
+  }
+  
+  /* Google Material Buffer Animation */
+  .buffer-icon {
+    font-size: 1.2rem;
+    margin-left: 4px;
+    animation: buffer-pulse 1.5s infinite;
+  }
+  @keyframes buffer-pulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+  }
+
+  .terminal-text .cursor {
+    display: inline-block;
+    width: 7px; height: 1.1em;
+    background: var(--term-ink);
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  footer {
+    color: var(--ink-soft);
+    font-size: .75rem;
+    letter-spacing: .3px;
+    text-align: center;
+    transition: color var(--dur) ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  }
+
+  @media (max-width: 420px) {
+    .card { padding: 24px 20px; }
+    h1 { font-size: 1.4rem; }
+    .theme-dot { width: 28px; height: 28px; }
+  }
+</style>
 </head>
-<body>
+<body data-theme="dark">
+
+  <div class="theme-rail" id="themeRail" role="group" aria-label="Theme picker"></div>
 
   <div class="card">
-    <span class="badge">#MyFirstCode • Codespaces</span>
-    <h1 id="headline">Building the Future, One Line at a Time.</h1>
-    <p id="subtext">Initializing my first repository setup on GitHub and stepping into the developer ecosystem.</p>
-    
-    <button class="btn" onclick="nextVision()">Cycle Vision ⚡</button>
-    
-    <div class="terminal-text" id="terminal">> Status: Codespace Active</div>
+    <span class="badge">Welcome To My Codespace</span>
+    <h1 id="headline">Let's Build the Future, One Line at a Time</h1>
+    <p id="subtext">Initializing the repository setup and stepping into the developer ecosystem.</p>
+
+    <!-- Wrapper allows the button to dynamically transition left, center, right -->
+    <div id="btn-wrapper">
+      <button class="btn" id="action-btn" onclick="nextVision()">Envision</button>
+    </div>
+
+    <div class="terminal-text" id="terminal">
+      &gt; Status:&nbsp;<span id="log-text">Codespace Active</span>
+      <span class="material-icons buffer-icon">more_horiz</span>
+      <span class="cursor"></span>
+    </div>
   </div>
 
+  <footer>©BJML — first commit</footer>
+
   <script>
+    // Sequence Data
     const data = [
-      { 
-        title: "Building the Future, One Line at a Time.", 
-        sub: "Initializing my first repository setup on GitHub and stepping into the developer ecosystem.", 
-        log: "> Status: Codespace Active" 
+      {
+        title: "Let's Build the Future, One Line at a Time",
+        sub: "Initializing the repository setup and stepping into the developer ecosystem.",
+        btnText: "Envision",
+        btnAlign: "flex-start",
+        log: "Codespace Active"
       },
-      { 
-        title: "Turning Ideas into Interactive Interfaces.", 
-        sub: "Combining modern design with structured code to solve real-world problems.", 
-        log: "> Status: DOM Elements Rendered" 
+      {
+        title: "With Goodwall and GitHub, We Can",
+        sub: "Turn ideas into an interactive interface. Please click the color palettes to switch the themes.",
+        btnText: "Take Action",
+        btnAlign: "center",
+        log: "DOM Elements Rendered"
       },
-      { 
-        title: "Ready for the Next Milestone.", 
-        sub: "Connecting with creators worldwide through Goodwall and GitHub.", 
-        log: "> Status: Repository Ready to Commit 🚀" 
+      {
+        title: "Get Ready for the Next Milestone",
+        sub: "By combining modern design with a code that can solve real-world problems. Have fun making your dreams come true.",
+        btnText: "Own It Now",
+        btnAlign: "flex-end",
+        log: "Repo Ready to Commit"
       }
     ];
 
@@ -111,8 +355,55 @@
       index = (index + 1) % data.length;
       document.getElementById('headline').innerText = data[index].title;
       document.getElementById('subtext').innerText = data[index].sub;
-      document.getElementById('terminal').innerText = data[index].log;
+      document.getElementById('action-btn').innerText = data[index].btnText;
+      document.getElementById('btn-wrapper').style.justifyContent = data[index].btnAlign;
+      document.getElementById('log-text').innerText = data[index].log;
     }
+
+    // ============ THEME SYSTEM ============
+    // Includes custom swatch and border colors mapping to the prompt
+    const themes = [
+      { id: 'light',   label: 'Light',   swatch: 'white',   border: 'black' },
+      { id: 'dark',    label: 'Dark',    swatch: 'black',   border: 'white' },
+      { id: 'lover',   label: 'Lover',   swatch: 'red',     border: 'pink' },
+      { id: 'blues',   label: 'Blues',   swatch: 'blue',    border: 'indigo' },
+      { id: 'choco',   label: 'Choco',   swatch: 'brown',   border: 'grey' },
+      { id: 'nature',  label: 'Nature',  swatch: 'green',   border: 'tan' },
+      { id: 'party',   label: 'Party',   swatch: 'indigo',  border: 'yellow' },
+      { id: 'royal',   label: 'Royal',   swatch: 'purple',  border: 'blue' },
+      { id: 'sweet',   label: 'Sweet',   swatch: 'pink',    border: 'red' },
+      { id: 'neutral', label: 'Neutral', swatch: 'olive',   border: 'indigo' }
+    ];
+
+    const rail = document.getElementById('themeRail');
+    const body = document.body;
+    const stored = localStorage.getItem('firstcode-theme');
+    let active = themes.some(t => t.id === stored) ? stored : 'dark';
+
+    themes.forEach(t => {
+      const dot = document.createElement('button');
+      dot.className = 'theme-dot';
+      dot.type = 'button';
+      dot.title = t.label;
+      dot.setAttribute('aria-label', t.label + ' theme');
+      dot.setAttribute('aria-pressed', String(t.id === active));
+      dot.style.setProperty('--swatch', t.swatch);
+      dot.style.setProperty('--dot-border', t.border); // Using user-defined border colors
+      dot.addEventListener('click', () => setTheme(t.id));
+      dot.dataset.themeId = t.id;
+      rail.appendChild(dot);
+    });
+
+    function setTheme(id) {
+      active = id;
+      body.setAttribute('data-theme', id);
+      localStorage.setItem('firstcode-theme', id);
+      [...rail.children].forEach(dot =>
+        dot.setAttribute('aria-pressed', String(dot.dataset.themeId === id))
+      );
+    }
+
+    setTheme(active);
   </script>
 </body>
 </html>
