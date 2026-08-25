@@ -14,104 +14,104 @@
     --dur: .25s;
   }
 
+  /* Light: White BG, Black Text and Gray Accent */
   body[data-theme="light"] {
-    --bg: #ffffff; --bg2: #f6f8fa; --border: #000000;
-    --ink: #000000; --ink-strong: #000000; --ink-soft: #656d76;
-    --accent: #57606a; --accent-strong: #24292f; --accent-press: #1f2328;
-    --accent-soft: rgba(0,0,0,.06); --accent-border: rgba(0,0,0,.2);
-    --term-ink: #24292f; --term-bg: #eceff2; --shadow: rgba(0,0,0,.15);
-    --swatch-bg: #ffffff; --swatch-border: #000000;
-    --field: radial-gradient(700px 500px at 15% 10%, rgba(0,0,0,.04), transparent 60%);
+    --bg: #ffffff; --bg2: #f6f8fa; --border: #d0d7de;
+    --ink: #000000; --ink-strong: #000000; --ink-soft: #57606a;
+    --accent: #57606a; --accent-strong: #32383f; --accent-press: #24292f;
+    --accent-soft: rgba(87,96,106,.10); --accent-border: rgba(87,96,106,.35);
+    --term-ink: #24292f; --term-bg: #eef2f6; --shadow: rgba(31,35,40,.12);
+    --field: radial-gradient(700px 500px at 15% 10%, rgba(87,96,106,.06), transparent 60%);
   }
 
+  /* Dark: Grayscale BG, White Text and Black Accent */
   body[data-theme="dark"] {
-    --bg: #161b22; --bg2: #0d1117; --border: #ffffff;
-    --ink: #ffffff; --ink-strong: #ffffff; --ink-soft: #8b949e;
-    --accent: #8b949e; --accent-strong: #c9d1d9; --accent-press: #f0f6fc;
+    --bg: #121212; --bg2: #1e1e1e; --border: #333333;
+    --ink: #e0e0e0; --ink-strong: #ffffff; --ink-soft: #aaaaaa;
+    --accent: #000000; --accent-strong: #222222; --accent-press: #000000;
     --accent-soft: rgba(255,255,255,.1); --accent-border: rgba(255,255,255,.3);
-    --term-ink: #58a6ff; --term-bg: #0d1117; --shadow: rgba(0,0,0,.5);
-    --swatch-bg: #0d1117; --swatch-border: #ffffff;
+    --term-ink: #ffffff; --term-bg: #181818; --shadow: rgba(0,0,0,.6);
     --field: radial-gradient(700px 500px at 15% 10%, rgba(255,255,255,.05), transparent 60%);
   }
 
+  /* Lover: Dark Red BG, Light Red Text and Pink Accent */
   body[data-theme="lover"] {
-    --bg: #5c0614; --bg2: #3d030c; --border: #ff6b81;
-    --ink: #ffb6c1; --ink-strong: #ffccd5; --ink-soft: #ff8fa3;
-    --accent: #2ed573; --accent-strong: #26af5d; --accent-press: #1e8e4b;
-    --accent-soft: rgba(46,213,115,.15); --accent-border: rgba(46,213,115,.4);
-    --term-ink: #2ed573; --term-bg: #260208; --shadow: rgba(0,0,0,.5);
-    --swatch-bg: #ff6b81; --swatch-border: #ffb6c1;
-    --field: radial-gradient(700px 500px at 15% 10%, rgba(46,213,115,.1), transparent 60%);
-  }
-
-  body[data-theme="blues"] {
-    --bg: #031926; --bg2: #02111a; --border: #468faf;
-    --ink: #70af85; --ink-strong: #e0fbfc; --ink-soft: #98c1d9;
-    --accent: #f77f00; --accent-strong: #d66f00; --accent-press: #b55e00;
-    --accent-soft: rgba(247,127,0,.15); --accent-border: rgba(247,127,0,.4);
-    --term-ink: #468faf; --term-bg: #010b10; --shadow: rgba(0,0,0,.5);
-    --swatch-bg: #468faf; --swatch-border: #031926;
-    --field: radial-gradient(700px 500px at 15% 10%, rgba(247,127,0,.1), transparent 60%);
-  }
-
-  body[data-theme="choco"] {
-    --bg: #2c1d11; --bg2: #1b120a; --border: #d4a373;
-    --ink: #e6ccb2; --ink-strong: #faedcd; --ink-soft: #ccd5ae;
-    --accent: #dda15e; --accent-strong: #bc6c25; --accent-press: #99581a;
-    --accent-soft: rgba(221,161,94,.15); --accent-border: rgba(221,161,94,.4);
-    --term-ink: #dda15e; --term-bg: #120b06; --shadow: rgba(0,0,0,.5);
-    --swatch-bg: #d4a373; --swatch-border: #2c1d11;
-    --field: radial-gradient(700px 500px at 15% 10%, rgba(221,161,94,.1), transparent 60%);
-  }
-
-  body[data-theme="nature"] {
-    --bg: #1b4332; --bg2: #081c15; --border: #e63946;
-    --ink: #b7e4c7; --ink-strong: #d8f3dc; --ink-soft: #95d5b2;
-    --accent: #e63946; --accent-strong: #c52233; --accent-press: #a51c28;
-    --accent-soft: rgba(230,57,70,.15); --accent-border: rgba(230,57,70,.4);
-    --term-ink: #52b788; --term-bg: #040e0a; --shadow: rgba(0,0,0,.5);
-    --swatch-bg: #e63946; --swatch-border: #b7e4c7;
-    --field: radial-gradient(700px 500px at 15% 10%, rgba(230,57,70,.1), transparent 60%);
-  }
-
-  body[data-theme="party"] {
-    --bg: #10002b; --bg2: #240046; --border: #00f5d4;
-    --ink: #7b2cbf; --ink-strong: #e0aaff; --ink-soft: #c77dff;
-    --accent: #fee440; --accent-strong: #f1c40f; --accent-press: #d4ac0d;
-    --accent-soft: rgba(254,228,64,.15); --accent-border: rgba(254,228,64,.4);
-    --term-ink: #00f5d4; --term-bg: #0c0021; --shadow: rgba(0,0,0,.5);
-    --swatch-bg: #00f5d4; --swatch-border: #7b2cbf;
-    --field: radial-gradient(700px 500px at 15% 10%, rgba(254,228,64,.1), transparent 60%);
-  }
-
-  body[data-theme="royal"] {
-    --bg: #3c096c; --bg2: #240046; --border: #ff70a6;
-    --ink: #e0aaff; --ink-strong: #ffffff; --ink-soft: #c77dff;
-    --accent: #ff70a6; --accent-strong: #ff4d8c; --accent-press: #e63973;
+    --bg: #3b0a10; --bg2: #4d0e16; --border: #731b27;
+    --ink: #ffccd5; --ink-strong: #ffe5ec; --ink-soft: #d9919f;
+    --accent: #ff70a6; --accent-strong: #ff85b3; --accent-press: #e0558c;
     --accent-soft: rgba(255,112,166,.15); --accent-border: rgba(255,112,166,.4);
-    --term-ink: #ff99c8; --term-bg: #1a0033; --shadow: rgba(0,0,0,.5);
-    --swatch-bg: #ff70a6; --swatch-border: #3c096c;
-    --field: radial-gradient(700px 500px at 15% 10%, rgba(255,112,166,.1), transparent 60%);
+    --term-ink: #ff9ebb; --term-bg: #26050a; --shadow: rgba(0,0,0,.5);
+    --field: radial-gradient(700px 500px at 20% 0%, rgba(255,112,166,.14), transparent 60%);
   }
 
+  /* Blues: Dark Blue BG, Light Blue Text and Indigo Accent */
+  body[data-theme="blues"] {
+    --bg: #0b192c; --bg2: #1e3e62; --border: #2a4d75;
+    --ink: #93c5fd; --ink-strong: #bfdbfe; --ink-soft: #60a5fa;
+    --accent: #3b82f6; --accent-strong: #60a5fa; --accent-press: #2563eb;
+    --accent-soft: rgba(59,130,246,.15); --accent-border: rgba(59,130,246,.4);
+    --term-ink: #93c5fd; --term-bg: #07111c; --shadow: rgba(0,0,0,.5);
+    --field: radial-gradient(700px 500px at 15% 5%, rgba(59,130,246,.14), transparent 60%);
+  }
+
+  /* Choco: Dark Brown BG, Orange Text and Tan Accent */
+  body[data-theme="choco"] {
+    --bg: #221610; --bg2: #33221a; --border: #4d3326;
+    --ink: #fdba74; --ink-strong: #ffedd5; --ink-soft: #d99a6c;
+    --accent: #d97706; --accent-strong: #f59e0b; --accent-press: #b45309;
+    --accent-soft: rgba(217,119,6,.15); --accent-border: rgba(217,119,6,.4);
+    --term-ink: #fde047; --term-bg: #140d09; --shadow: rgba(0,0,0,.5);
+    --field: radial-gradient(700px 500px at 20% 0%, rgba(217,119,6,.14), transparent 60%);
+  }
+
+  /* Nature: Dark Green BG, Light Green Text and Olive Accent */
+  body[data-theme="nature"] {
+    --bg: #0d2318; --bg2: #143625; --border: #1e4d35;
+    --ink: #86efac; --ink-strong: #bbf7d0; --ink-soft: #4ade80;
+    --accent: #65a30d; --accent-strong: #84cc16; --accent-press: #4d7c0f;
+    --accent-soft: rgba(101,163,13,.15); --accent-border: rgba(101,163,13,.4);
+    --term-ink: #bef264; --term-bg: #08160f; --shadow: rgba(0,0,0,.5);
+    --field: radial-gradient(700px 500px at 15% 10%, rgba(101,163,13,.14), transparent 60%);
+  }
+
+  /* Party: Dark Indigo BG, Cyan Text and Purple Accent */
+  body[data-theme="party"] {
+    --bg: #171033; --bg2: #24194d; --border: #3b2a75;
+    --ink: #67e8f9; --ink-strong: #a5f3fc; --ink-soft: #22d3ee;
+    --accent: #a855f7; --accent-strong: #c084fc; --accent-press: #9333ea;
+    --accent-soft: rgba(168,85,247,.15); --accent-border: rgba(168,85,247,.4);
+    --term-ink: #e879f9; --term-bg: #0f0a21; --shadow: rgba(0,0,0,.5);
+    --field: radial-gradient(700px 500px at 20% 5%, rgba(168,85,247,.16), transparent 60%);
+  }
+
+  /* Royal: Purple BG, Dark Purple Text and Yellow Accent */
+  body[data-theme="royal"] {
+    --bg: #3b0764; --bg2: #581c87; --border: #6b21a8;
+    --ink: #581c87; --ink-strong: #3b0764; --ink-soft: #4c1d95;
+    --accent: #facc15; --accent-strong: #fde047; --accent-press: #eab308;
+    --accent-soft: rgba(250,204,21,.15); --accent-border: rgba(250,204,21,.4);
+    --term-ink: #fef08a; --term-bg: #2e0450; --shadow: rgba(0,0,0,.5);
+    --field: radial-gradient(700px 500px at 15% 0%, rgba(250,204,21,.14), transparent 60%);
+  }
+
+  /* Sweet: Pink BG, Dark Pink Text and Purple Accent */
   body[data-theme="sweet"] {
-    --bg: #ff758c; --bg2: #ff7eb3; --border: #7b2cbf;
-    --ink: #4a0e4e; --ink-strong: #fff0f3; --ink-soft: #7a1c47;
-    --accent: #7b2cbf; --accent-strong: #5a189a; --accent-press: #3c096c;
-    --accent-soft: rgba(123,44,191,.15); --accent-border: rgba(123,44,191,.4);
-    --term-ink: #7b2cbf; --term-bg: #ffb3c6; --shadow: rgba(0,0,0,.3);
-    --swatch-bg: #7b2cbf; --swatch-border: #ff758c;
-    --field: radial-gradient(700px 500px at 15% 10%, rgba(123,44,191,.1), transparent 60%);
+    --bg: #fbcfe8; --bg2: #f472b6; --border: #ec4899;
+    --ink: #831843; --ink-strong: #500724; --ink-soft: #9f1239;
+    --accent: #7e22ce; --accent-strong: #9333ea; --accent-press: #6b21a8;
+    --accent-soft: rgba(126,34,206,.15); --accent-border: rgba(126,34,206,.4);
+    --term-ink: #581c87; --term-bg: #fce7f3; --shadow: rgba(131,24,67,.2);
+    --field: radial-gradient(700px 500px at 15% 5%, rgba(126,34,206,.10), transparent 60%);
   }
 
+  /* Neutral: Olive BG, Brown Text and White Accent */
   body[data-theme="neutral"] {
-    --bg: #556b2f; --bg2: #384e1b; --border: #ffffff;
-    --ink: #d4a373; --ink-strong: #fefae0; --ink-soft: #ccd5ae;
-    --accent: #ffffff; --accent-strong: #f0f0f0; --accent-press: #dcdcdc;
-    --accent-soft: rgba(255,255,255,.15); --accent-border: rgba(255,255,255,.4);
-    --term-ink: #fefae0; --term-bg: #283618; --shadow: rgba(0,0,0,.5);
-    --swatch-bg: #ffffff; --swatch-border: #556b2f;
-    --field: radial-gradient(700px 500px at 15% 10%, rgba(255,255,255,.1), transparent 60%);
+    --bg: #3f3f38; --bg2: #52524a; --border: #737368;
+    --ink: #451a03; --ink-strong: #291102; --ink-soft: #573315;
+    --accent: #ffffff; --accent-strong: #f3f4f6; --accent-press: #e5e7eb;
+    --accent-soft: rgba(255,255,255,.2); --accent-border: rgba(255,255,255,.5);
+    --term-ink: #ffffff; --term-bg: #2d2d27; --shadow: rgba(0,0,0,.4);
+    --field: radial-gradient(700px 500px at 20% 10%, rgba(255,255,255,.10), transparent 60%);
   }
 
   /* ============ BASE ============ */
@@ -144,19 +144,32 @@
   .theme-dot {
     width: 30px; height: 30px;
     border-radius: 50%;
-    border: 2px solid var(--swatch-border);
     cursor: pointer;
     padding: 0;
-    background: var(--swatch-bg);
+    background: var(--swatch);
     transition: transform .15s ease, border-color var(--dur) ease, box-shadow var(--dur) ease;
     position: relative;
   }
+  
+  /* Theme-specific transparent border mapping */
+  body[data-theme="light"] .theme-dot { border: 2px solid rgba(0,0,0,0.2); }
+  body[data-theme="dark"] .theme-dot { border: 2px solid rgba(255,255,255,0.2); }
+  body[data-theme="lover"] .theme-dot { border: 2px solid rgba(255,112,166,0.3); }
+  body[data-theme="blues"] .theme-dot { border: 2px solid rgba(79,70,229,0.3); }
+  body[data-theme="choco"] .theme-dot { border: 2px solid rgba(128,128,128,0.3); }
+  body[data-theme="nature"] .theme-dot { border: 2px solid rgba(217,210,133,0.3); }
+  body[data-theme="party"] .theme-dot { border: 2px solid rgba(234,217,55,0.3); }
+  body[data-theme="royal"] .theme-dot { border: 2px solid rgba(0,0,255,0.3); }
+  body[data-theme="sweet"] .theme-dot { border: 2px solid rgba(255,0,0,0.3); }
+  body[data-theme="neutral"] .theme-dot { border: 2px solid rgba(245,245,220,0.3); }
+
   .theme-dot:hover { transform: translateY(-2px) scale(1.06); }
   .theme-dot:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
   .theme-dot[aria-pressed="true"] {
+    border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--accent-soft);
   }
 
@@ -199,75 +212,49 @@
     margin-bottom: 24px;
     transition: color var(--dur) ease;
   }
-
+  
   /* ============ BUTTON CONTAINER & ALIGNMENT ============ */
   .btn-container {
     display: flex;
     width: 100%;
     margin-bottom: 24px;
+    transition: justify-content 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
+  
   .btn-container.align-left { justify-content: flex-start; }
   .btn-container.align-center { justify-content: center; }
   .btn-container.align-right { justify-content: flex-end; }
 
   .btn {
     background-color: var(--accent-press);
-    color: var(--ink-strong);
-    border: 1px solid var(--accent-border);
+    color: #fff;
+    border: none;
     padding: 10px 18px;
     border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
+    transition: background var(--dur) ease, transform .1s ease;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    transition: background var(--dur) ease, transform .1s ease, justify-content var(--dur) ease;
+    gap: 4px;
   }
   .btn:hover { background-color: var(--accent-strong); }
   .btn:active { transform: scale(.98); }
   .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-  /* ============ DOT LOADING ANIMATION ============ */
-  .dot-flashing {
-    position: relative;
-    width: 6px;
-    height: 6px;
-    border-radius: 5px;
-    background-color: currentColor;
-    color: currentColor;
-    animation: dot-flashing 1s infinite linear alternate;
-    animation-delay: .5s;
-  }
-  .dot-flashing::before, .dot-flashing::after {
-    content: "";
+  /* Dot loading animation */
+  .dots span {
+    animation: dotPulse 1.4s infinite ease-in-out both;
     display: inline-block;
-    position: absolute;
-    top: 0;
   }
-  .dot-flashing::before {
-    left: -10px;
-    width: 6px;
-    height: 6px;
-    border-radius: 5px;
-    background-color: currentColor;
-    animation: dot-flashing 1s infinite alternate;
-    animation-delay: 0s;
-  }
-  .dot-flashing::after {
-    left: 10px;
-    width: 6px;
-    height: 6px;
-    border-radius: 5px;
-    background-color: currentColor;
-    animation: dot-flashing 1s infinite alternate;
-    animation-delay: 1s;
-  }
-  @keyframes dot-flashing {
-    0% { background-color: currentColor; }
-    50%, 100% { background-color: rgba(255, 255, 255, 0.2); }
+  .dots span:nth-child(2) { animation-delay: .2s; }
+  .dots span:nth-child(3) { animation-delay: .4s; }
+  @keyframes dotPulse {
+    0%, 80%, 100% { opacity: 0; transform: scale(0.8); }
+    40% { opacity: 1; transform: scale(1.2); }
   }
 
-  /* ============ TERMINAL ============ */
+  /* ============ TERMINAL — signature element ============ */
   .terminal-text {
     font-family: 'SFMono-Regular', Consolas, monospace;
     background: var(--term-bg);
@@ -279,6 +266,15 @@
     position: relative;
     overflow: hidden;
     transition: background var(--dur) ease, border-color var(--dur) ease, color var(--dur) ease;
+  }
+  .terminal-text::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      to bottom, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px,
+      transparent 1px, transparent 3px
+    );
+    pointer-events: none;
   }
   .terminal-text .cursor {
     display: inline-block;
@@ -301,6 +297,12 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
   }
+
+  @media (max-width: 420px) {
+    .card { padding: 24px 20px; }
+    h1 { font-size: 1.4rem; }
+    .theme-dot { width: 27px; height: 27px; }
+  }
 </style>
 </head>
 <body data-theme="dark">
@@ -313,13 +315,10 @@
     <p id="subtext">Initializing the repository setup and stepping into the developer ecosystem.</p>
 
     <div class="btn-container align-left" id="btnContainer">
-      <button class="btn" id="actionBtn" onclick="nextVision()">
-        <span id="btnText">Envision</span>
-        <span class="dot-flashing"></span>
-      </button>
+      <button class="btn" id="actionBtn" onclick="nextVision()">Envision<span class="dots"><span>.</span><span>.</span><span>.</span></span></button>
     </div>
 
-    <div class="terminal-text" id="terminal">&gt; Codespace Active<span class="cursor"></span></div>
+    <div class="terminal-text" id="terminal">&gt; Status: Codespace Active<span class="cursor"></span></div>
   </div>
 
   <footer>©BJML — first commit</footer>
@@ -329,23 +328,23 @@
       {
         title: "Let's Build Tomorrow, One Line at a Time",
         sub: "Initializing the repository setup and stepping into the developer ecosystem.",
-        log: "> Codespace Active",
-        btnLabel: "Envision",
-        align: "align-left"
+        log: "> Status: Codespace Active",
+        btnText: "Envision",
+        alignClass: "align-left"
       },
       {
         title: "With Goodwall and GitHub, We Can",
         sub: "Turn ideas into an interactive interface. Please click the color palettes to switch the themes.",
-        log: "> DOM Elements Rendered",
-        btnLabel: "Take Action",
-        align: "align-center"
+        log: "> Status: DOM Elements Rendered",
+        btnText: "Take Action",
+        alignClass: "align-center"
       },
       {
         title: "Get Ready for the Next Milestone",
         sub: "By combining modern design with a code that can solve real-world problems. Have fun making your dreams come true.",
-        log: "> Repo Ready to Commit",
-        btnLabel: "Own It Now",
-        align: "align-right"
+        log: "> Status: Repo Ready to Commit",
+        btnText: "Own It Now",
+        alignClass: "align-right"
       }
     ];
 
@@ -353,27 +352,32 @@
 
     function nextVision() {
       index = (index + 1) % data.length;
-      document.getElementById('headline').innerText = data[index].title;
-      document.getElementById('subtext').innerText = data[index].sub;
-      document.getElementById('terminal').innerHTML = data[index].log + '<span class="cursor"></span>';
-      document.getElementById('btnText').innerText = data[index].btnLabel;
+      const current = data[index];
       
+      document.getElementById('headline').innerText = current.title;
+      document.getElementById('subtext').innerText = current.sub;
+      document.getElementById('terminal').innerHTML = current.log + '<span class="cursor"></span>';
+      
+      // Update button text with animated dots buffer
+      document.getElementById('actionBtn').innerHTML = `${current.btnText}<span class="dots"><span>.</span><span>.</span><span>.</span></span>`;
+      
+      // Update button seamless transition position
       const container = document.getElementById('btnContainer');
-      container.className = "btn-container " + data[index].align;
+      container.className = `btn-container ${current.alignClass}`;
     }
 
     // ============ THEME SYSTEM ============
     const themes = [
-      { id: 'light',   label: 'Light',   swatchBg: '#ffffff', swatchBorder: '#000000' },
-      { id: 'dark',    label: 'Dark',    swatchBg: '#0d1117', swatchBorder: '#ffffff' },
-      { id: 'lover',   label: 'Lover',   swatchBg: '#ff6b81', swatchBorder: '#ffb6c1' },
-      { id: 'blues',   label: 'Blues',   swatchBg: '#468faf', swatchBorder: '#031926' },
-      { id: 'choco',   label: 'Choco',   swatchBg: '#d4a373', swatchBorder: '#2c1d11' },
-      { id: 'nature',  label: 'Nature',  swatchBg: '#e63946', swatchBorder: '#b7e4c7' },
-      { id: 'party',   label: 'Party',   swatchBg: '#00f5d4', swatchBorder: '#7b2cbf' },
-      { id: 'royal',   label: 'Royal',   swatchBg: '#ff70a6', swatchBorder: '#3c096c' },
-      { id: 'sweet',   label: 'Sweet',   swatchBg: '#7b2cbf', swatchBorder: '#ff758c' },
-      { id: 'neutral', label: 'Neutral', swatchBg: '#ffffff', swatchBorder: '#556b2f' }
+      { id: 'light',   label: 'Light',   swatch: '#ffffff' },
+      { id: 'dark',    label: 'Dark',    swatch: '#121212' },
+      { id: 'lover',   label: 'Lover',   swatch: '#3b0a10' },
+      { id: 'blues',   label: 'Blues',   swatch: '#0b192c' },
+      { id: 'choco',   label: 'Choco',   swatch: '#221610' },
+      { id: 'nature',  label: 'Nature',  swatch: '#0d2318' },
+      { id: 'party',   label: 'Party',   swatch: '#171033' },
+      { id: 'royal',   label: 'Royal',   swatch: '#3b0764' },
+      { id: 'sweet',   label: 'Sweet',   swatch: '#fbcfe8' },
+      { id: 'neutral', label: 'Neutral', swatch: '#3f3f38' }
     ];
 
     const rail = document.getElementById('themeRail');
@@ -388,8 +392,7 @@
       dot.title = t.label;
       dot.setAttribute('aria-label', t.label + ' theme');
       dot.setAttribute('aria-pressed', String(t.id === active));
-      dot.style.setProperty('--swatch-bg', t.swatchBg);
-      dot.style.setProperty('--swatch-border', t.swatchBorder);
+      dot.style.setProperty('--swatch', t.swatch);
       dot.addEventListener('click', () => setTheme(t.id));
       dot.dataset.themeId = t.id;
       rail.appendChild(dot);
